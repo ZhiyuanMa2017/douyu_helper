@@ -29,5 +29,5 @@ class DYHTTPRequests:
 dyreq = DYHTTPRequests()
 if __name__ == '__main__':
     print(dyreq.request("get", "/lapi/member/api/getInfo").json())
-    glow_url = "/japi/prop/backpack/web/v1?rid=12306"
+    glow_url = "/japi/prop/backpack/web/v1?rid=614135"
     print(dyreq.request("get", glow_url).json())

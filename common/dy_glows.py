@@ -26,7 +26,7 @@ def get_glow():
     # 需要先访问一次直播间才会获得道具
     logger.info("------正在获取荧光棒------")
     go_room()
-    glow_url = "/japi/prop/backpack/web/v1?rid=12306"
+    glow_url = "/japi/prop/backpack/web/v1?rid=614135"
     glow_res = dyreq.request("get", glow_url)
     global Bags
     logger.info("------背包检查开始------")
@@ -67,7 +67,7 @@ def get_own():
     return Own
 
 
-def glow_donate(num=1, room_id=12306):
+def glow_donate(num=1, room_id=614135):
     """
     :param num: 向该房间赠送荧光棒的数量
     :param room_id: 房间号
@@ -104,7 +104,7 @@ def go_room():
     chrome_options.add_argument('--headless')  # 无界面
     driver = webdriver.Chrome(options=chrome_options)
     logger.info("打开直播间")
-    driver.get('https://www.douyu.com/8291425')
+    driver.get('https://www.douyu.com/614135')
     dy_cookie = set_cookie(dyreq.cookie)
     for i in dy_cookie.keys():
         mycookie = {
