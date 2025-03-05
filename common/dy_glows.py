@@ -120,9 +120,8 @@ def go_room():
         driver.add_cookie(mycookie)
     logger.info("刷新页面以完成登录")
     driver.refresh()
-    WebDriverWait(driver, 30, 0.5).until(lambda drivers: drivers.find_element("xpath", "/html/body/section/header/div"
-                                                                                       "/div/div[3]/div[7]/div"))
-    a = driver.find_element("xpath", "/html/body/section/header/div/div/div[3]/div[7]/div")
+    WebDriverWait(driver, 30, 0.5).until(lambda drivers: drivers.find_element("xpath", "//div[contains(@class, 'UserInfo public-DropMenu')]"))
+    a = driver.find_element("xpath", "//div[contains(@class, 'UserInfo public-DropMenu')]")
     if "UserInfo" in a.get_attribute("class"):
         logger.info("成功以登陆状态进入页面")
         logger.info("如提示背包没有荧光棒请延长等待时间")
